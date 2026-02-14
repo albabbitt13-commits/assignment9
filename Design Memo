@@ -1,0 +1,26 @@
+#"""
+Design Memo
+
+A graph is the correct data structure to represent a social network because 
+social relationships are naturally modeled as connections between individuals. 
+In this case, each person represents a node, and each friendship represents 
+an edge. Since friendships are mutual, the graph is undirected, meaning each 
+connection goes both ways. Using an adjacency list allows each Person object 
+to store a list of their direct friends efficiently.
+
+A list would not work well because it does not naturally represent 
+relationships between elements. While a list could store people, it would not 
+efficiently show how each person is connected to others. A tree would also be 
+inappropriate because trees enforce a hierarchical structure with parent-child 
+relationships. Social networks are not hierarchical — people can have multiple 
+connections in many directions, and cycles are common. Trees do not allow 
+cycles, but social networks do.
+
+One trade-off I noticed is that checking for duplicate friendships requires 
+searching the friend list, which takes linear time. However, printing the 
+network is efficient because we simply iterate through each person and display 
+their adjacency list. The adjacency list structure is memory efficient compared 
+to an adjacency matrix, especially when the network is sparse. Overall, graphs 
+provide both the flexibility and performance needed to accurately model 
+dynamic, real-world social relationships.
+"""
